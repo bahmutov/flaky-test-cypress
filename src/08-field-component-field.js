@@ -24,13 +24,6 @@ module.exports = class extends React.Component {
     let value = evt.target.value
     const error = this.props.validate ? this.props.validate(value) : false
 
-    if (name === 'email' && value === 'so') {
-      if (Math.random() < 0.2) {
-        console.log('Random email error!')
-        evt.target.value = value = ''
-      }
-    }
-
     this.setState({ value, error })
 
     this.props.onChange({ name, value, error })
