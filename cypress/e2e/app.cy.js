@@ -14,6 +14,8 @@ describe('Sign Up', () => {
     cy.get('select[name="department"]').select('core')
     // select the "git-it" course
     cy.get('select[name="course"]').select('git-it')
+    //Ensure drop has seleted value before submission
+    cy.get('select[name="course"]').invoke('val').should('eql', 'git-it')
     // submit the form
     cy.get('input[type="submit"]').click()
     // the "Saved!" message should appear
